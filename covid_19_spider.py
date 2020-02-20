@@ -11,7 +11,7 @@ response = requests.get(url=url)
 responseJson = response.json()
 data = json.loads(responseJson['data'])
 
-# map函数 CovidModel是初始化方法的简写
+# map函数 CovidModel是CovidModel初始化方法的简写
 covidModels = map(CovidModel, data)
 
 # 通过时间戳进行排序
@@ -25,6 +25,8 @@ dates, confirms = AddCovidModel.creatDatesAndConfirms(addCovidModels = addCovidM
 
 #绘图
 Draw.draw(dates, confirms)
+
+print("完成")
 
 
 
