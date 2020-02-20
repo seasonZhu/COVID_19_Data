@@ -1,4 +1,5 @@
 import json
+import os
 
 import requests
 
@@ -26,7 +27,11 @@ dates, confirms = AddCovidModel.creatDatesAndConfirms(addCovidModels = addCovidM
 #绘图
 Draw.draw(dates, confirms)
 
-print("完成")
+# 当前工作目录 current working directory 
+path = os.getcwd()
+
+# 完成后打开文件夹
+os.system(r"open {}".format(path))
 
 
 
